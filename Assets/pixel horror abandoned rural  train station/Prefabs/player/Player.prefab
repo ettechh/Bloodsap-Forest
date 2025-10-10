@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8172307310741106526}
   - component: {fileID: 2785446486911489484}
   - component: {fileID: 6241925992408769740}
+  - component: {fileID: 6499022926262210640}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -107,6 +108,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 100
   PlayerBody: {fileID: 4286937248595956669}
+--- !u!114 &6499022926262210640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840457326483642086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+  m_Version: 2
 --- !u!1 &2573594799482561210
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,6 +166,8 @@ GameObject:
   - component: {fileID: 4799846175442971519}
   - component: {fileID: 2262500207951197450}
   - component: {fileID: 1028442974200992139}
+  - component: {fileID: 2185503436655050934}
+  - component: {fileID: 992606761128463006}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -263,3 +310,32 @@ MonoBehaviour:
   speed: 12
   gravity: -9.81
   JumpHight: 3
+--- !u!114 &2185503436655050934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2573594799482561210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 925984a65b5a1f045ae28c3ce8dcc0a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::littleDog.PlayerMovement
+  speed: 12
+  gravity: -9.81
+  JumpHight: 3
+--- !u!114 &992606761128463006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2573594799482561210}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5f2618844127b43808bcd77cb5a600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::littleDog.MouseLook
+  mouseSensitivity: 100
+  PlayerBody: {fileID: 0}
