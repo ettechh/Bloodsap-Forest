@@ -16,6 +16,6 @@ public class GameManager : MonoBehaviour
     {
         score += amount;
         if (scoreText != null)
-            scoreText.text = "Books Collected: " + score;
+            scoreText.text = "Books Collected: " + score + "/6";
     }
 }
