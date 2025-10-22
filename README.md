@@ -3,6 +3,6 @@ It’s a minimalist, atmospheric experience inspired by PS2-era horror, perfect 
 
 --------------------------------------------------------------
 Targeted Platform:
-Windows, Mac via Unity 
+Windows and Mac via Unity deployment
 --------------------------------------------------------------
 https://assetstore.unity.com/lists/comsc-380-2475890333712
