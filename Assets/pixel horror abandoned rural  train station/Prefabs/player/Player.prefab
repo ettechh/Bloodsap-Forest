@@ -166,7 +166,6 @@ GameObject:
   - component: {fileID: 4799846175442971519}
   - component: {fileID: 2262500207951197450}
   - component: {fileID: 1028442974200992139}
-  - component: {fileID: 2185503436655050934}
   - component: {fileID: 992606761128463006}
   m_Layer: 0
   m_Name: Player
@@ -307,21 +306,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925984a65b5a1f045ae28c3ce8dcc0a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
-  gravity: -9.81
-  JumpHight: 3
---- !u!114 &2185503436655050934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2573594799482561210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 925984a65b5a1f045ae28c3ce8dcc0a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::littleDog.PlayerMovement
   speed: 12
   gravity: -9.81
   JumpHight: 3
