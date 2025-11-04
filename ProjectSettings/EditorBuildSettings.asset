@@ -6,7 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/pixel horror abandoned rural  train station/Scenes/Start Scene.unity
+    guid: 7c7806949bd874b709bb2e4d71d01874
+  - enabled: 1
+    path: Assets/pixel horror abandoned rural  train station/Scenes/MAIN_SCENE.unity
+    guid: 9610ea774df404fd8a584263d379dff9
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
