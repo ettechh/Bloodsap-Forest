@@ -17,16 +17,8 @@ public class PlayerHealth : MonoBehaviour
     {
 
     }
-    
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Enemy"))
-        {
-            TakeDamage();
-        }
-    }
 
-    void TakeDamage()
+    public void TakeDamage()
     {
         currentHealth--;
         if (currentHealth <= 0)
@@ -35,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    void Die()
+    public void Die()
     {
         // Add death logic here
         

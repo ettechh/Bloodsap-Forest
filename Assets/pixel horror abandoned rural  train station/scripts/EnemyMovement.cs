@@ -25,12 +25,9 @@ public class AgentInteraction : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
-    {
-        print("Enemy Triggered");
-        
+    {   
         if (other.CompareTag("Player") && !isAttacking)
         {
-            print("Enemy has reached the player!");
             StartCoroutine(AttackPlayer());
         }
     }
@@ -42,6 +39,13 @@ public class AgentInteraction : MonoBehaviour
 
         // Play attack animation
         animator.SetTrigger("Attack");
+
+        // Deal damage to the player
+        PlayerHealth playerHealth = target.GetComponent<PlayerHealth>();
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage();
+        }
 
         // Wait for animation to finish
         yield return new WaitForSeconds(1.1f);
