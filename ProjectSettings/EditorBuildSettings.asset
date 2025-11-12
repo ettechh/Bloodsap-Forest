@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/pixel horror abandoned rural  train station/Scenes/MAIN_SCENE.unity
     guid: 9610ea774df404fd8a584263d379dff9
+  - enabled: 1
+    path: Assets/pixel horror abandoned rural  train station/Scenes/Death Scene.unity
+    guid: de5cd519c4ecd4f3e905a57b8e32fe4d
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
