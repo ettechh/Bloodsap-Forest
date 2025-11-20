@@ -7,11 +7,13 @@ public class AgentInteraction : MonoBehaviour
     private NavMeshAgent agent;
     private Animator animator;
     private bool isAttacking = false;
+    private PlayerHealth playerHealth;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        playerHealth = target.GetComponent<PlayerHealth>();
     }
 
     void Update()
@@ -26,11 +28,9 @@ public class AgentInteraction : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("Enemy Triggered");
         
         if (other.CompareTag("Player") && !isAttacking)
         {
-            print("Enemy has reached the player!");
             StartCoroutine(AttackPlayer());
         }
     }
@@ -42,9 +42,13 @@ public class AgentInteraction : MonoBehaviour
 
         // Play attack animation
         animator.SetTrigger("Attack");
-
+        
         // Wait for animation to finish
         yield return new WaitForSeconds(1.1f);
+        // Inflict damage to player
+        playerHealth.TakeDamage();
+        Debug.Log("Player took damage");
+
 
         agent.isStopped = false;
         isAttacking = false;
