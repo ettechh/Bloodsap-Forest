@@ -3060,7 +3060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba71c56a1a97a4602abb6ae041b6ab13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectible
-  collectSound: {fileID: 0}
+  collectSound: {fileID: 8300000, guid: 17d150da56d721842b3e0ce461730236, type: 3}
   scoreValue: 1
 --- !u!65 &282305914
 BoxCollider:
@@ -3978,7 +3978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba71c56a1a97a4602abb6ae041b6ab13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectible
-  collectSound: {fileID: 0}
+  collectSound: {fileID: 8300000, guid: 17d150da56d721842b3e0ce461730236, type: 3}
   scoreValue: 1
 --- !u!65 &401627321
 BoxCollider:
@@ -4159,7 +4159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba71c56a1a97a4602abb6ae041b6ab13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectible
-  collectSound: {fileID: 0}
+  collectSound: {fileID: 8300000, guid: 17d150da56d721842b3e0ce461730236, type: 3}
   scoreValue: 1
 --- !u!65 &409692537
 BoxCollider:
@@ -7356,7 +7356,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -8857,7 +8857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba71c56a1a97a4602abb6ae041b6ab13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectible
-  collectSound: {fileID: 0}
+  collectSound: {fileID: 8300000, guid: 17d150da56d721842b3e0ce461730236, type: 3}
   scoreValue: 1
 --- !u!65 &963007879
 BoxCollider:
@@ -9594,7 +9594,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: da32a42efe943a44eb47cb3ba82ee5a1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.22
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -11108,7 +11108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba71c56a1a97a4602abb6ae041b6ab13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectible
-  collectSound: {fileID: 0}
+  collectSound: {fileID: 8300000, guid: 17d150da56d721842b3e0ce461730236, type: 3}
   scoreValue: 1
 --- !u!65 &1285040788
 BoxCollider:
@@ -12636,7 +12636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba71c56a1a97a4602abb6ae041b6ab13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectible
-  collectSound: {fileID: 0}
+  collectSound: {fileID: 8300000, guid: 17d150da56d721842b3e0ce461730236, type: 3}
   scoreValue: 1
 --- !u!65 &1457955139
 BoxCollider:
@@ -13316,7 +13316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba71c56a1a97a4602abb6ae041b6ab13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectible
-  collectSound: {fileID: 0}
+  collectSound: {fileID: 8300000, guid: 17d150da56d721842b3e0ce461730236, type: 3}
   scoreValue: 1
 --- !u!65 &1498362765
 BoxCollider:
@@ -20072,6 +20072,10 @@ PrefabInstance:
     - target: {fileID: 5674045591320546770, guid: b97d249eba0e010499129105a890e4ab, type: 3}
       propertyPath: m_Name
       value: skybox
+      objectReference: {fileID: 0}
+    - target: {fileID: 5674045591320546770, guid: b97d249eba0e010499129105a890e4ab, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
