@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Collectible : MonoBehaviour
 {
@@ -14,11 +15,18 @@ public class Collectible : MonoBehaviour
             if (collectSound != null)
                 AudioSource.PlayClipAtPoint(collectSound, transform.position);
 
-            // Add score (optional: if you have a game manager)
-            GameManager.Instance.AddScore(scoreValue);
+
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.AddScore(scoreValue);
+            }
 
             // Destroy collectible
             Destroy(gameObject);
         }
+
     }
+
+    
+
 }
