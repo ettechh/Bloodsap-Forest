@@ -2001,6 +2001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Flashlight
   FlashlightLight: {fileID: 1827098057}
+  flashlightSound: {fileID: 0}
 --- !u!4 &116793594 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6547977003745114080, guid: 46364dce0e99c4741a52eb8521d48e6e, type: 3}
@@ -20675,7 +20676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e3e940d44577904e80945ae75c1b91c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  maxHealth: 3
+  maxHealth: 2
 --- !u!1001 &3623792575328821626
 PrefabInstance:
   m_ObjectHideFlags: 0

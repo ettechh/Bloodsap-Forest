@@ -26,6 +26,11 @@ public class PlayerHealth : MonoBehaviour
         // Add death logic here
          
         Debug.Log("Player died.");
+
+        // Unlock and show cursor
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         // Reload the current scene
         SceneManager.LoadScene(2);
     }
