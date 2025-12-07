@@ -1,46 +1,60 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 namespace littleDog
 {
     public class MouseLook : MonoBehaviour
     {
-        public float mouseSensitivity = 100f;
+        public float mouseSensitivity = 250f;   // raw input needs high values
         public Transform PlayerBody;
-        float Xrot = 0f;
+
+        float xRotation = 0f;
         public static bool CanMove = true;
+
         void Start()
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            LockCursor(true);
         }
 
-        // Update is called once per frame
         void Update()
         {
+            // Toggle pause with ESC
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 CanMove = !CanMove;
-                if(CanMove == false)
-                {
-                    Cursor.lockState = CursorLockMode.None;
-                    Cursor.visible = true;
-                    Time.timeScale = 0;
-                }else
-                {
-                    Cursor.lockState = CursorLockMode.Locked;
-                    Cursor.visible = false;
-                    Time.timeScale = 1;
-                }
-  
+                LockCursor(CanMove);
+                Time.timeScale = CanMove ? 1 : 0;
             }
-            if (CanMove == false) return;
-            float mousex = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
-            Xrot -= mouseY;
-            Xrot = Mathf.Clamp(Xrot, -90, 90);
-            transform.localRotation = Quaternion.Euler(Xrot, 0f, 0f);
-            PlayerBody.Rotate(Vector3.up * mousex);
+
+            // Stop camera if paused
+            if (!CanMove) return;
+
+            // Use RAW input (true FPS)
+            float mouseX = Input.GetAxisRaw("Mouse X") * mouseSensitivity * Time.deltaTime;
+            float mouseY = Input.GetAxisRaw("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+            // Vertical rotation
+            xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+            transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+
+            // Horizontal rotation (player body)
+            PlayerBody.Rotate(Vector3.up * mouseX);
+        }
+
+        void LockCursor(bool state)
+        {
+            if (state)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
         }
     }
 }
