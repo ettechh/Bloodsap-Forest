@@ -13,7 +13,17 @@ public class AgentInteraction : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-        playerHealth = target.GetComponent<PlayerHealth>();
+        
+        if (target != null)
+        {
+            playerHealth = target.GetComponent<PlayerHealth>();
+            if (playerHealth == null)
+                Debug.LogWarning("PlayerHealth component not found on target!");
+        }
+        else
+        {
+            Debug.LogError("Target not assigned to " + gameObject.name);
+        }
     }
 
     void Update()
@@ -28,10 +38,13 @@ public class AgentInteraction : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
-        if (other.CompareTag("Player") && !isAttacking)
+        if (other.CompareTag("Player") && !isAttacking && playerHealth != null)
         {
             StartCoroutine(AttackPlayer());
+        }
+        else if (other.CompareTag("Player") && playerHealth == null)
+        {
+            Debug.LogWarning("PlayerHealth is null when trying to attack!");
         }
     }
 
@@ -45,10 +58,17 @@ public class AgentInteraction : MonoBehaviour
         
         // Wait for animation to finish
         yield return new WaitForSeconds(1.1f);
+        
         // Inflict damage to player
-        playerHealth.TakeDamage();
-        Debug.Log("Player took damage");
-
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage();
+            Debug.Log("Player took damage");
+        }
+        else
+        {
+            Debug.LogWarning("Cannot deal damage - PlayerHealth is null!");
+        }
 
         agent.isStopped = false;
         isAttacking = false;
