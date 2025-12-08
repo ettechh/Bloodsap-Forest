@@ -21459,7 +21459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e3e940d44577904e80945ae75c1b91c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  maxHealth: 3
+  maxHealth: 2
   uiManager: {fileID: 1118842936}
 --- !u!1001 &3623792575328821626
 PrefabInstance:
@@ -21976,6 +21976,5 @@ SceneRoots:
   - {fileID: 1178308213}
   - {fileID: 1118842937}
   - {fileID: 1206395903}
-  - {fileID: 88479506}
   - {fileID: 88479506}
   - {fileID: 124360571}
