@@ -8,6 +8,9 @@ public class AgentInteraction : MonoBehaviour
     private Animator animator;
     private bool isAttacking = false;
     private PlayerHealth playerHealth;
+    
+    public float attackRange = 2f; // Distance at which enemy attacks
+    private float attackCooldown = 0f; // Cooldown timer
 
     void Start()
     {
@@ -29,11 +32,27 @@ public class AgentInteraction : MonoBehaviour
     void Update()
     {
         if (target != null && !isAttacking && GameManager.Instance.score > 0)
-            agent.SetDestination(target.position);
+        {
+            float distanceToTarget = Vector3.Distance(transform.position, target.position);
+            
+            // If within attack range and not already attacking, attack
+            if (distanceToTarget <= attackRange && attackCooldown <= 0f)
+            {
+                StartCoroutine(AttackPlayer());
+            }
+            else
+            {
+                agent.SetDestination(target.position);
+            }
+        }
 
         // Update walk animation
         float speed = agent.velocity.magnitude;
         animator.SetFloat("Speed", speed);
+        
+        // Decrease cooldown timer
+        if (attackCooldown > 0f)
+            attackCooldown -= Time.deltaTime;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -53,13 +72,17 @@ public class AgentInteraction : MonoBehaviour
         isAttacking = true;
         agent.isStopped = true;
 
+        // Show damage overlay immediately
+        if (playerHealth != null)
+            playerHealth.ShowDamageUI();
+
         // Play attack animation
         animator.SetTrigger("Attack");
         
         // Wait for animation to finish
         yield return new WaitForSeconds(1.1f);
         
-        // Inflict damage to player
+        // Inflict actual damage to player
         if (playerHealth != null)
         {
             playerHealth.TakeDamage();
@@ -72,5 +95,6 @@ public class AgentInteraction : MonoBehaviour
 
         agent.isStopped = false;
         isAttacking = false;
+        attackCooldown = 2f; // 2 second cooldown between attacks
     }
 }

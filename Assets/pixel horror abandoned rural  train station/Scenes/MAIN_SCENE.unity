@@ -323,6 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   target: {fileID: 1391217937}
+  attackRange: 2
 --- !u!82 &4000572
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11021,7 +11022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   damageOverlay: {fileID: 1830980426}
-  maxAlpha: 0.6
+  maxAlpha: 0.3
 --- !u!4 &1118842937
 Transform:
   m_ObjectHideFlags: 0

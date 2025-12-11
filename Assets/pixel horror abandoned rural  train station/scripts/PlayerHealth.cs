@@ -31,6 +31,14 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void ShowDamageUI()
+    {
+        // Show damage overlay immediately (before actual damage is applied)
+        int predictedHealth = currentHealth - 1;
+        if (uiManager != null)
+            uiManager.UpdateDamageOverlay(predictedHealth, maxHealth);
+    }
+
     public void Die()
     {
         Debug.Log("Player died.");

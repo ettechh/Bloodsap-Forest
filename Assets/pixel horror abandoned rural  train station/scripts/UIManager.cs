@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public Image damageOverlay;
-    public float maxAlpha = 0.6f;
+    public float maxAlpha = 0.3f;  // Reduced from 0.6f for less intensity
 
     // call this from PlayerHealth
     public void UpdateDamageOverlay(int current, int max)
