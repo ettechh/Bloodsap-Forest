@@ -5,4 +5,5 @@ It’s a minimalist, atmospheric experience inspired by PS2-era horror, perfect 
 Targeted Platform:
 Windows and Mac via Unity deployment
 --------------------------------------------------------------
-https://assetstore.unity.com/lists/comsc-380-2475890333712
+Play the Game here:
+[https://assetstore.unity.com/lists/comsc-380-2475890333712](https://play.unity.com/en/games/25d383b6-2b4b-4293-83b8-6be84136cd91/bloodsapwebbuild)
